@@ -4,7 +4,6 @@ import json
 from datetime import datetime
 import random
 
-
 def calc_distance(row, data):
 	"""
 	Processes a single row from the CSV file and updates the data dictionary.
@@ -35,6 +34,7 @@ def calc_distance(row, data):
         
 		# Initialize the list for this key if not exists, and append the trip distance
 		data.setdefault(key, []).append(trip_distance)
+
 
 def calc_totals(row,data):
 	"""
@@ -110,6 +110,7 @@ def read_and_process_csv(file_path, processing_func):
 	
 	return data
 
+
 def write_data(file_path, fields, data):
 	"""
     Writes data to a CSV file with specified field names.
@@ -172,24 +173,7 @@ def filter(row, val, operation):
 		return row != val
 	else:
 		raise ValueError(f"Unsupported operation: {operation}")
-
-# def _get_sample_rows(self, csv_file_path, sample_size):
-# 	"""
-# 	Read the CSV file and return a list of randomly selected sample rows.
-
-# 	Args:
-# 		csv_file_path (str): Path to the CSV file.
-# 		sample_size (int): Number of sample rows to select.
-
-# 	Returns:
-# 		list: List of randomly selected sample rows.
-# 	"""
-# 	sample_rows = []
-# 	with open(csv_file_path, 'r', newline='') as csv_file:
-# 		reader = csv.DictReader(csv_file)
-# 		all_rows = list(reader)
-# 		sample_rows = random.sample(all_rows, sample_size)
-# 	return sample_rows
+    
 
 def get_sample_rows(csv_file_path, sample_size):
     """
@@ -208,18 +192,3 @@ def get_sample_rows(csv_file_path, sample_size):
         all_rows = list(reader)
         sample_rows = random.sample(all_rows, sample_size)
     return sample_rows
-
-# def unpack_rows(data):
-# 	rows = []
-# 	for (date, hour), distances in sorted(data.items()):
-# 		shortest_distance = min(distances)
-# 		longest_distance = max(distances)
-# 		row = {
-# 			'date': date,
-# 			'hour': hour,
-# 			'shortestDistance': shortest_distance,
-# 			'longestDistance': longest_distance
-# 		}
-# 		rows.append(row)
-# 	return rows
-
