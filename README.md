@@ -32,7 +32,18 @@ cd zeiss-assignment
 3. Execute the Python script:
 python script_name.py
 
+## Testing
 
+1. Open a terminal or command prompt.
+   
+2. Navigate to the project directory:
+cd zeiss-assignment
+
+3. Execute the Python script:
+python script_name.py
+- This will be followed by an input prompt 'Enter the path to the CSV file:'
+- Consider you want to test your output under the directory output/
+- Provide the CSV path as follows in the command line:  output/Question#2/out_amountPaid.csv
 ## Configuration
 
 - Modify the script as needed to customize its behavior.
