@@ -14,7 +14,7 @@ class TestCalcTotals(unittest.TestCase):
 
     def test_filter_greater_than(self):
         """
-        Test the filter function to check if it correctly evaluates 'greater than' and 'greater than or equal to' conditions
+        Test the filter function to check if it correctly evaluates 'greater than' conditions
         for different fields in the sample rows.
         """
         for row in self.sample_rows:
