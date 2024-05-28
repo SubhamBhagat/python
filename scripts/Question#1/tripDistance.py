@@ -14,20 +14,33 @@ if __name__ == "__main__":
     print("Data processed successfully.")
 
     # Define the headers for the output CSV file
-    headers = ['date', 'hour', 'shortestDistance', 'longestDistance']
+    # The granularoty can be adjusted by adding more fields for the headers list
+    # Example if you require date wise records then your row would looks as follows,
+    #headers = ['date', 'hour', 'shortestDistance', 'longestDistance']
+
+    headers = ['hour', 'shortestDistance', 'longestDistance']
 
     # Initialize an empty list to store the rows of the output CSV file
     rows = []
 
     # Iterate through the processed data, sorted by date and hour
-    for (date, hour), distances in sorted(data.items()):
+    for (hour), distances in sorted(data.items()):
         # Calculate the shortest and longest distances for each date and hour
         shortest_distance = min(distances)
         longest_distance = max(distances)
 
         # Create a dictionary representing a row of the output CSV file
+        # Adjust the keys based on the headers list 
+        # Example if you require date wise records then your row would looks as follows,
+        """
         row = {
             'date': date,
+            'hour': hour,
+            'shortestDistance': shortest_distance,
+            'longestDistance': longest_distance
+        }
+        """
+        row = {
             'hour': hour,
             'shortestDistance': shortest_distance,
             'longestDistance': longest_distance
