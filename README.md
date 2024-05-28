@@ -54,6 +54,8 @@ python script_name.py
 
 ## Results
 
+Note that the output CSV files are merely a sample of the actual dataset - random 1000 records
+
 1. The output dataset relies heavily on the cleanzed inputs. There are cases where the are no passenger in the input dataset and yet the values for totalAmount is observed.
 
 2. There are also cases where there is a negative amount and negative tripDistance covered.
@@ -64,6 +66,13 @@ python script_name.py
 - Example: Extract only the records that have a min tripDistance of 0.5 miles and have a tripDuration of at least 3 minutes or greater.
 - Note: trip_duration_minutes can be calculated using round("tpepDropoffDateTime"-"tpepPickupDateTime",2)/60)
 
+## Further analysis
+
+1. One can take this furhter by adding features like user behaviour
+   - what is the primary payment method
+   - what is the average trip duration for a frequent traveller
+
+3. It is worth noting that these analysis can be helpful in idnetifying customers and help them with a discount or coupoun
 
 ## Configuration
 
