@@ -29,8 +29,11 @@ def calc_distance(row, data):
 		# Parse the pickup datetime to extract hour and date
 		pickup_datetime = datetime.strptime(row['tpepPickupDateTime'], '%Y-%m-%dT%H:%M:%SZ')
 		day_hour = pickup_datetime.hour
-		date = str(pickup_datetime.date())
-		key = (date, day_hour)
+		#date = str(pickup_datetime.date())
+
+		# Defines the granularity for aggregation
+		# Example if one needs hourly data for all dates then key = (date, day_hour)
+		key = (day_hour)
         
 		# Initialize the list for this key if not exists, and append the trip distance
 		data.setdefault(key, []).append(trip_distance)

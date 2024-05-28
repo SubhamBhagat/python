@@ -21,6 +21,13 @@ cd your-repository
 3. Install the dependencies using pip:
 pip install -r requirements.txt
 
+## About the Dataset
+
+- This is an open dataset and can be found at: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+- The purpose of the project is to utilize python standard libraries and perform transformation as required
+- Thus, the core python scrips are only meant to transform once the data is in place (such as a local storage in CSV format)
+- With respect to the extraction, it is not in the scope of this document
+- The extraction was made using Databricks via azureml.opendatasets. Refer here for more details: [azureml.opendatasets](https://learn.microsoft.com/en-us/azure/open-datasets/dataset-taxi-yellow?tabs=azureml-opendatasets#azure-databricks)
 
 ## Usage
 
@@ -32,6 +39,40 @@ cd zeiss-assignment
 3. Execute the Python script:
 python script_name.py
 
+## Testing
+
+1. Open a terminal or command prompt.
+   
+2. Navigate to the project directory:
+cd zeiss-assignment
+
+3. Execute the Python script:
+python script_name.py
+- This will be followed by an input prompt 'Enter the path to the CSV file:'
+- Consider you want to test your output under the directory output/
+- Provide the CSV path as follows in the command line:  output/Question#2/out_amountPaid.csv
+
+## Results
+
+Note that the output CSV files are merely a sample of the actual dataset - random 1000 records
+
+1. The output dataset relies heavily on the cleanzed inputs. There are cases where the are no passenger in the input dataset and yet the values for totalAmount is observed.
+
+2. There are also cases where there is a negative amount and negative tripDistance covered.
+
+3. These are few of the outliers identified and removed during the analysis
+
+4. To enrich the resultset further, one can eliminate the extreme outliers and try to scope the input dataset within an interval range
+- Example: Extract only the records that have a min tripDistance of 0.5 miles and have a tripDuration of at least 3 minutes or greater.
+- Note: trip_duration_minutes can be calculated using round("tpepDropoffDateTime"-"tpepPickupDateTime",2)/60)
+
+## Further analysis
+
+1. One can take this furhter by adding features like user behaviour
+   - what is the primary payment method
+   - what is the average trip duration for a frequent traveller
+
+3. It is worth noting that these analysis can be helpful in idnetifying customers and help them with a discount or coupoun
 
 ## Configuration
 
