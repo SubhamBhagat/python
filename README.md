@@ -51,6 +51,20 @@ python script_name.py
 - This will be followed by an input prompt 'Enter the path to the CSV file:'
 - Consider you want to test your output under the directory output/
 - Provide the CSV path as follows in the command line:  output/Question#2/out_amountPaid.csv
+
+## Results
+
+1. The output dataset relies heavily on the cleanzed inputs. There are cases where the are no passenger in the input dataset and yet the values for totalAmount is observed.
+
+2. There are also cases where there is a negative amount and negative tripDistance covered.
+
+3. These are few of the outliers identified and removed during the analysis
+
+4. To enrich the resultset further, one can eliminate the extreme outliers and try to scope the input dataset within an interval range
+- Example: Extract only the records that have a min tripDistance of 0.5 miles and have a tripDuration of at least 3 minutes or greater.
+- Note: trip_duration_minutes can be calculated using round("tpepDropoffDateTime"-"tpepPickupDateTime",2)/60)
+
+
 ## Configuration
 
 - Modify the script as needed to customize its behavior.
