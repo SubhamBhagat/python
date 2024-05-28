@@ -13,6 +13,10 @@ class TestCalcTotals(unittest.TestCase):
         self.sample_rows = get_sample_rows(csv_file_path, sample_size)
 
     def test_filter_greater_than(self):
+        """
+        Test the filter function to check if it correctly evaluates 'greater than' and 'greater than or equal to' conditions
+        for different fields in the sample rows.
+        """
         for row in self.sample_rows:
         # Test filter function with 'greater than' condition
             shortestDistance = float(row['shortestDistance'])
