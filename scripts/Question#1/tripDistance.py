@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/Users/skumar/Desktop/sample py")  # Adjust the path to your project directory
+sys.path.append("/Users/skumar/Desktop/zeiss_assessment")  # Adjust the path to your project directory
 from functions.utils import * # Import necessary functions from the functions.utils module
 
 # Check if the script is executed as the main program
